@@ -1,0 +1,1284 @@
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    width: 1200px;
+    color: #fffcfc;
+    background-color: #3f5050;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+} 
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1{
+    ont-family: neutrif_studioregular,Helvetica,Roboto,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+h4{
+    ont-family: neutrif_studioregular,Helvetica,Roboto,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+
+}
+
+
+.loadingPag {
+    position: fixed;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    animation: fadeOutLeft 2s;
+    animation-delay: 2.5s;
+}
+
+
+@keyframes fadeOutLeft {
+    0% {
+        -webkit-transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(2000px);
+    }
+}
+
+
+.loadingText {
+    position: relative;
+    display: flex;
+    color: white;
+    font-size: 100px;
+    justify-content: center;
+    top: 10%;
+    transform: translateY(-50%);
+}
+
+.LoadingAnimationBear{
+    height: 300px;
+    width: 300px;
+}
+
+.FrontPageContainer{
+    position: relative;
+    top: 30vh
+}
+.headerTextMain {
+    font-size: 5em;
+    text-align: center;
+}
+
+.header2TextMain{
+    position: relative;
+    text-align: center;
+    font-size: 1.5em; 
+    margin-top: -40px;
+}
+
+.button-container{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+}
+
+#button-drive{
+    font-size: 1.5em;
+    margin-right: 10%;
+}
+
+#button-drinks{
+    font-size: 1.5em;
+    margin-left: 10%;
+}
+
+.manOrWoman{
+    position: relative;
+    top: 5vh;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+}
+
+.headerDrive{
+    position: absolute;
+    font-size: 3.7em;
+}
+
+.buttonMan{
+    height: 250px;
+    width: 150px;
+    z-index: 10;
+    position: absolute;
+    top: 35vh;
+    margin: 5px;
+    padding: 10px;
+    margin-right: 200px;
+    border-radius: 5%;
+    transition: all .2s ease-in-out;
+
+}
+.imgSex{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
+
+}
+
+
+.buttonWoman{
+    height: 250px;
+    width: 150px;
+    z-index: 10;
+    position: absolute;
+    top: 35vh;
+    margin: 5px;
+    padding: 10px;
+    margin-left: 200px;
+    border-radius: 5%;
+    transition: all .2s ease-in-out;
+}
+.manOrWomanHeader{
+    position: absolute;
+    z-index: 1000;
+    top: 20vh;
+    font-size: 2.6em;
+}
+.questionMark{
+    position: absolute;
+    display: inline;
+    color: #fff;
+    margin-left: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #5f7878;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1em;
+    transition: all .2s ease-in-out;
+}
+.questionMark:hover{
+    color: #5f7878;
+    background-color: #fff;
+}
+
+@keyframes buttonAnimate {
+    from{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+/*---------------Style for Alle infoSections---------------*/
+
+/*Style for ManOrWoman*/
+.triangleManOrWoman{
+    position: relative;
+    left: 229px;
+    width: 0;
+    height: 0;
+    display: none;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    opacity: 0;
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+    font-size: small;
+    color: #333;
+}
+
+.triangleManOrWoman.active{
+    display: block;
+    opacity: 1;
+    z-index: 1000;
+    position: relative;
+    left: 229px;
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    
+}
+
+.dropdownManOrWoman{
+    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 250px;
+    overflow-y: auto;
+    max-height: 295px;
+    padding: 10px;
+    margin-top: 20px;
+    left: 110px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+}
+.dropdownManOrWoman.active{
+    display: block;
+    opacity: 1;
+    z-index: 10;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+/*Style for weight*/
+.triangleWeight{
+    position: absolute;
+    left: 550px;
+    top: 47px;
+    width: 0;
+    height: 0;
+    display: none;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    opacity: 0;
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+    font-size: small;
+    color: #333;
+}
+
+.triangleWeight.active{
+    display: block;
+    opacity: 1;
+    z-index: 1000;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    
+}
+
+.dropdownWeight{
+    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 250px;
+    overflow-y: auto;
+    max-height: 295px;
+    padding: 10px;
+    margin-top: 66px;
+    left: 430px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+}
+.dropdownWeight.active{
+    display: block;
+    opacity: 1;
+    z-index: 10;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+/*Style for time*/
+.triangleTime{
+    position: absolute;
+    left: 825px;
+    top: 47px;
+    width: 0;
+    height: 0;
+    display: none;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    opacity: 0;
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+    font-size: small;
+    color: #333;
+}
+
+.triangleTime.active{
+    display: block;
+    opacity: 1;
+    z-index: 1000;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    
+}
+
+
+.dropdownTime{
+    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 250px;
+    overflow-y: auto;
+    max-height: 295px;
+    padding: 10px;
+    margin-top: 66px;
+    left: 710px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+}
+.dropdownTime.active{
+    display: block;
+    opacity: 1;
+    z-index: 10;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+/*Style for drinks*/
+.triangleDrinks{
+    position: absolute;
+    left: 389px;
+    top: 47px;
+    width: 0;
+    height: 0;
+    display: none;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    opacity: 0;
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+    font-size: small;
+    color: #333;
+}
+
+.triangleDrinks.active{
+    display: block;
+    opacity: 1;
+    z-index: 1000;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    
+}
+
+
+.dropdownDrinks{
+    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 250px;
+    overflow-y: auto;
+    max-height: 295px;
+    padding: 10px;
+    margin-top: 19px;
+    left: 270px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+}
+.dropdownDrinks.active{
+    display: block;
+    opacity: 1;
+    z-index: 10;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+.dropdownText{
+    padding: 25px;
+    font-size: large;
+    color: #333;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    left: 215px;
+}
+.close:after {
+    content: '';
+    height: 30px;
+    border-left: 2px solid #5f7878;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 28px;
+}
+.close:before {
+    content: '';
+    height: 30px;
+    border-left: 2px solid #5f7878;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 28px;
+}
+.close:hover{
+    cursor: pointer;
+}
+
+.buttonMan.active{
+    background-color: rgba(29, 29, 29, 0.207);
+    border: 2px solid white;
+}
+.buttonWoman.active{
+    background-color: rgba(29, 29, 29, 0.207);
+    border: 2px solid white;
+}
+
+.buttonMan:hover{
+    background-color: rgba(29, 29, 29, 0.207); 
+    transform: scale(1.1);
+}
+.buttonWoman:hover{
+    background-color: rgba(29, 29, 29, 0.207);
+    transform: scale(1.1);
+}
+
+.textSex{
+    position: relative;
+    text-align: center;
+    top: 185px;
+}
+
+
+.weighet{
+    position: relative;
+    top: 50vh;
+    left: 140px;
+    width: 900px;
+}
+
+.headerWeighet{
+    position: relative;
+    font-size: 2.6em;
+    display: flex;
+    justify-content: center;
+}
+
+.questionMarkWeighet{
+    position: absolute;
+    display: inline;
+    color: #fff;
+    margin-left: 230px;
+    width: 45px;
+    height: 45px;
+    background-color: #5f7878;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1em;
+    transition: all .2s ease-in-out;
+}
+.questionMarkWeighet:hover{
+    color: #5f7878;
+    background-color: #fff;
+}
+
+/* To disable the up and down default arrow settings  */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-weighet {
+    width: 70px;
+    height: 70px;
+    background-color: #ffffff00;
+    border: 1px solid;
+    border-color: #fff;
+    color: #fff;
+    text-align: center;
+    border-radius: 100px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    left: -25px;
+    font-size:2em;
+}
+
+input:focus {
+    outline:none;
+}
+
+.kgAndLb{
+    position: absolute;
+    top: 15.5vh;
+    left: 6px;
+    font-size: 1em;
+    z-index: 5;
+}
+
+.slider {
+    position: relative;
+    top: 1.5vh;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border: 0px solid #ffffff;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.25);
+    height: 42px;
+    width: 22px;
+    border-radius: 22px;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 22px;
+    height: 35px;
+    border-radius: 45%;
+    background: #b9b5b5;
+    cursor: pointer;
+  }
+
+  .minText{
+    position: relative;
+    left: 8px;
+    font-size: 1.2em;
+    width: 50px;
+
+  }
+
+  .maxText{
+    position: relative;
+    left: 875px;
+    font-size: 1.2em;
+    width: 50px;
+    top: -5.7vh;
+  }
+
+
+.timeStop{
+    position: relative;
+    top: 90vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.headerTime{
+    font-size: 2.6em;
+    display: flex;
+    justify-content: center;
+}
+
+.questionMarkTime{
+    position: absolute;
+    display: inline;
+    color: #fff;
+    margin-left: 480px;
+    width: 45px;
+    height: 45px;
+    background-color: #5f7878;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1em;
+    transition: all .2s ease-in-out;
+}
+.questionMarkTime:hover{
+    color: #5f7878;
+    background-color: #fff;
+}
+
+.glass{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    left: 30%;
+    top: -20px;
+}
+.times{
+    position: absolute;
+    top: 15vh;
+    left: 45%;
+    height: 50px; 
+    width: 100px;
+    font-size: 1.5em;
+    background: transparent;
+    color: #fff;
+
+}
+
+.timesHeader{
+    position: absolute;
+    top: 7vh;
+    left: 48%;
+    font-size: 1.2em;
+    color: #ef5050;
+}
+
+.dato{
+    position: absolute;
+    top: 15vh;
+    left: 58%;
+    height: 50px; 
+    width: 100px;
+    font-size: 1.5em;
+    background: transparent;
+    color: #fff;
+
+}
+
+.datoHeader{
+    position: absolute;
+    top: 7vh;
+    left: 60%;
+    font-size: 1.2em;
+    color: #ef5050;
+
+}
+
+.drinks{
+    position: relative;
+    top: 135vh;
+    display: flex;
+    justify-content: center;
+}
+
+.drinksHader{
+    position: absolute;
+    font-size: 2.6em;
+    top: -50px;
+}
+
+.questionMarkDrinks{
+    position: absolute;
+    display: inline;
+    color: #fff;
+    margin-left: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: #5f7878;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1em;
+    transition: all .2s ease-in-out;
+}
+.questionMarkDrinks:hover{
+    color: #5f7878;
+    background-color: #fff;
+}
+
+.beerSeltzerDiv{
+    position: relative;
+    top: 10vh;
+}
+
+.beerSeltzerPng{
+    position: relative;
+    display: flex;
+    align-items: center;    
+    height: 75px;
+    width: 75px;
+    transition: filter 0.3s;
+}
+
+
+.vinChampagneDiv{
+    position: relative;
+    top: 10vh;
+    padding-left: 5vh;
+}
+
+.vinChampagnePng{
+   position: relative;
+  left: 50%;
+  transform:translate(-50%);
+    height: 75px;
+    width: 75px;
+    transition: filter 0.3s;
+}
+
+
+.WineAndLiquorPng{
+    position: relative;
+   left: 50%;
+   transform:translate(-50%);
+     height: 75px;
+     width: 75px;
+     transition: filter 0.3s;
+ }
+
+.liquorDiv{
+    position: relative;
+    top: 10vh;
+    padding-left: 5vh;
+}
+
+.liquorPng{
+   position: relative;
+  left: 50%;
+  transform:translate(-50%);
+    height: 75px;
+    width: 75px;
+    transition: filter 0.3s;
+}
+
+.liquorPng:hover, .WineAndLiquorPng:hover, .beerSeltzerPng:hover, .vinChampagnePng:hover{
+    filter: invert(1);
+}
+
+.drinkText{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
+}
+
+.maineDivForAllDrinks{
+    position: relative;
+    top: 145vh;    
+}
+
+ul{
+    list-style-type: none;
+  }
+
+  .listOfDrinks{
+    overflow: auto;
+    height: 500px;
+  }
+
+.drinkMainOnNewDrink{
+    width: 1100px;
+}
+.containerForAlleHeaders{
+    position: relative;
+    visibility:visible;
+    top: 145vh;
+    left: 5%;
+    display: flex;
+}
+
+.typeHeaders{
+    font-size: 1.1em;
+    padding-right: 22%;
+    color: #ef5050;
+}
+
+.volHeaders{
+    font-size: 1.1em;
+    padding-right: 10%;
+    color: #ef5050;
+}
+
+.quantityHeaders{
+    font-size: 1.1em;
+    padding-right: 19%;
+    color: #ef5050;
+}
+
+.numberHeaders{
+    font-size: 1.1em;
+    color: #ef5050;
+}
+
+.containerForAlleOpinions{
+    display: flex;
+    justify-content: space-between;
+}
+.typeSelect{
+    height: 50px; 
+    width: 100%;
+    font-size: 1.3em;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding-right: 0.5em;
+}
+
+.volSelect{
+    height: 50px; 
+    width: 100%;
+    font-size: 1.3em;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding-right: 0.5em;
+
+}
+.quantitySelect{
+    height: 50px; 
+    width: 100%;
+    font-size: 1.3em;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding-right: 0.5em;
+}
+
+.numberSelect{
+    height: 50px; 
+    width: 100%;
+    font-size: 1.3em;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding-right: 0.5em;
+}
+
+.divider{
+    height: 0.5px;
+    width: 1100px; 
+    background-color: rgb(148, 148, 148);
+}
+
+.deleteX{
+    position: relative;
+    top: 17px;
+    right: 30px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border-color: red;
+    
+}
+
+.deleteX:hover{
+    background-color: #ffffff;
+    border: 0.2px;
+    transition: all .2s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+/* Up and down button*/
+.upButton {
+    position: fixed;
+    z-index: 1000;
+    margin-top: 900px;
+    left: 65px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    right: 300px;
+
+}
+
+.arrowUp {
+    position: absolute;
+    top: 22px;
+    width: 35px;
+    height: 4px;
+    left: 7px;
+    background-color: #5e5e63;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(90deg);
+}
+
+.arrowUp::after,
+.arrowUp::before {
+    content: "";
+    position: absolute;
+    width: 21px;
+    height: 4px;
+    right: 18px;
+    background-color: #5e5e63;
+}
+
+.arrowUp::after {
+    top: -6px;
+    transform: rotate(-45deg);
+}
+
+.arrowUp::before {
+    top: 6px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+}
+
+
+.downButton {
+    position: fixed;
+    z-index: 1000;
+    margin-top: 900px;
+    right: 65px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+}
+.arrowDown {
+    position: absolute;
+    top: 22px;
+    width: 35px;
+    height: 4px;
+    left: 7px;
+    background-color: #5e5e63;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(270deg);
+}
+
+.arrowDown::after,
+.arrowDown::before {
+    content: "";
+    position: absolute;
+    width: 21px;
+    height: 4px;
+    right: 18px;
+    background-color: #5e5e63;
+}
+
+.arrowDown::after {
+    top: -6px;
+    transform: rotate(-45deg);
+}
+
+.arrowDown::before {
+    top: 6px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+}
+
+.downButton.active{
+    background-color: #ffffff88;
+    cursor:default;    
+}
+
+.select-menuUp {
+    max-width: 330px;
+  }
+  .select-menuUp .optionsUp {
+    position: fixed;
+    width: 150px;
+    z-index: 1000;
+    overflow-y: auto;
+    max-height: 295px;
+    padding: 10px;
+    margin-top: 820px;
+    left:10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+  }
+  .select-menuUp .optionsUp .optionUp {
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+    justify-content: center; /* Add this line to center the text */
+}
+  .select-menuUp .optionsUp .optionUp:hover {
+    background: #f2f2f2;
+  }
+  .select-menuUp .optionsUp .optionUp i {
+    font-size: 25px;
+    margin-right: 12px;
+  }
+  .select-menuUp .optionsUp .optionUp .optionUp-text {
+    font-size: 18px;
+    color: #333;
+  }
+  .select-menuUp.active .optionsUp {
+    display: block;
+    opacity: 0;
+    z-index: 10;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+  }
+
+
+
+  @keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 30px, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInDown {
+    from {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+    to {
+      transform: translate3d(0, 20px, 0);
+      opacity: 0;
+    }
+  }
+  .resultsBla{
+    position: relative;
+    top: 155vh;
+    text-align: center;
+    align-content: center;
+}
+.displyBla {
+    position: relative;
+    font-size: 4.5em;
+    animation: fadedFromBottom 3s;
+}   
+.headerAlcoholLevel {
+    font-size: 3.5em;
+    line-height:90px;
+    animation: fadedFromBottom 2s;
+
+}
+
+.warningDiv{
+    position: relative;
+    top: 25px;
+    text-align: start;
+}
+
+.warningHeader{
+    position: relative;
+    left: 26%;
+    border-bottom: solid;
+    width: 47%;
+    animation: fadedFromBottom 4s;
+
+}
+
+.warningContent{
+    position: relative;
+    left: 15%;
+    align-items: center;
+    max-width: 70%;
+    animation: fadedFromBottom 5s;
+}
+
+@keyframes fadedFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.progress{
+    position: relative;
+    top: 40vh;
+    margin-left: 23%;
+    height: 10px;
+    width: 50%;
+    border: 10px solid #f4a261;
+    border-radius: 15px;
+    opacity: 0;
+    animation: fadeInOut 8.2s;
+    text-align: center;
+    font-size: 0.8em;
+}
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0; /* Fully transparent at the beginning */
+    }
+    50% {
+      opacity: 1; /* Fully opaque at the midpoint (2 seconds) */
+    }
+    90% {
+      opacity: 1; /* Fully transparent at the end */
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+
+.progress .color{
+    position: absolute;
+    background-color: #ffffff;
+    width: 0px;
+    height: 10px;
+    border-radius: 15px;
+    animation: progres 4s infinite linear; 
+}
+@keyframes progres{
+    0%{
+      width: 0%;
+    }
+    25%{
+        width: 50%;
+    }
+    50%{
+        width: 75%;
+    }
+    75%{
+        width: 85%;
+    }
+    100%{
+        width: 100%;
+    }
+};
+
+
+
+
