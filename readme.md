@@ -2,7 +2,7 @@
 
 ## Description:
 
-Welcome to the Blood Alcohol Calculator repository! This repository contains a basic web application for calculating Blood Alcohol Concentration (BAC) based on the number of drinks consumed and the time elapsed since drinking, utilizing the official BAC formula.
+Welcome to the Blood Alcohol Calculator repository! This repository contains a basic web application for calculating Blood Alcohol Level (BAL) based on the number of drinks consumed and the time elapsed since drinking, utilizing the official BAL formula.
 
 ## View Project Online:
 
@@ -14,8 +14,8 @@ This project serves primarily as an educational endeavor. As one of my early pro
 
 ## Features:
 
-- Calculate your Blood Alcohol Concentration (BAC) based on the number of drinks consumed and the time elapsed since drinking.
-- Determine when it's safe to drive based on your BAC level;
+- Calculate your Blood Alcohol Level (BAL)based on the number of drinks consumed and the time elapsed since drinking.
+- Determine when it's safe to drive based on your BAL level;
 - Calculate the number of drinks required to achieve a target BAC level.
 
 ## How to use:
