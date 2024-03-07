@@ -1,8 +1,7 @@
 # Blood Alcohol Calculator
 
-## Description:
-
-Welcome to the Blood Alcohol Calculator repository! This repository contains a basic web application for calculating Blood Alcohol Level (BAL) based on the number of drinks consumed and the time elapsed since drinking, utilizing the official BAL formula.
+## Description
+This repository contains a basic web application for calculating Blood Alcohol Level (BAL) based on the number of drinks consumed and the time elapsed since drinking, utilizing the official BAL formula.
 
 ## View Project Online:
 
